@@ -12,6 +12,9 @@
 * Improve reporting of `sourcekitdInProc` loading failures.  
   [Daniel Sunarjo](https://github.com/sunarjodaniel)
 
+* New syntax, attribute and declaration kinds introduced in Swift 6.4.
+  [John Fairhurst](https://github.com/johnfairh)
+
 #### Bug Fixes
 
 * None.
