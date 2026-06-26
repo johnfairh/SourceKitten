@@ -6,7 +6,8 @@
 
 #### Enhancements
 
-* None.
+* New syntax, attribute and declaration kinds introduced in Swift 6.4.  
+  [John Fairhurst](https://github.com/johnfairh)
 
 #### Bug Fixes
 
