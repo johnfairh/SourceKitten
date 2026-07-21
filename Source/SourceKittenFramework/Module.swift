@@ -99,6 +99,13 @@ public struct Module {
             return nil
         }
 
+        // 2X. Rummage through the XCBuildData TaskStore
+        fputs("Reading XCBuildData task store\n", stderr)
+        if let info = SwiftPM.fromBuildTaskStore(inPath: path, moduleName: spmName) {
+            self.init(name: info.0, compilerArguments: info.1)
+            return
+        }
+
         // 3. See if the (1) build built our module
         if let info = SwiftPM.fromBuildResults(buildResults, moduleName: spmName) {
             fputs("Using module data from build output\n", stderr)
