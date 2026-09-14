@@ -10,8 +10,8 @@ jobs:
   Xcode:
     strategy:
       matrix:
-        xcode_version: ['26.5']
-    runs-on: macos-26
+        xcode_version: ['27.0.0-beta']
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v7
       - uses: maxim-lobanov/setup-xcode@v1
