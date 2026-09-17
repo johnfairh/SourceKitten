@@ -23,6 +23,7 @@ private func stripAbsolutePaths(escapedJSONString: String) -> String {
             range: NSRange(location: 0, length: escapedJSONString.bridge().length),
             withTemplate: " file=\\\\\"\\\\\"")
     }
+#if compiler(>=6.4)
 
     var escapedJSONString = escapedJSONString
     let keys = [
@@ -33,6 +34,12 @@ private func stripAbsolutePaths(escapedJSONString: String) -> String {
         escapedJSONString = stripPathnameKey(key: key, escapedJSONString: escapedJSONString)
     }
     return stripXMLFileAttribute(escapedJSONString: escapedJSONString)
+
+#else
+
+    return stripPathnameKey(key: "key.filepath", escapedJSONString: escapedJSONString)
+
+#endif
 }
 
 func compareJSONString(withFixtureNamed name: String,
