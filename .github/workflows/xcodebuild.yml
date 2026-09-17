@@ -10,7 +10,7 @@ jobs:
   Xcode:
     strategy:
       matrix:
-        xcode_version: ['27.0.0-beta']
+        xcode_version: ['27.0.0']
     runs-on: xcode-27
     steps:
       - uses: actions/checkout@v7
